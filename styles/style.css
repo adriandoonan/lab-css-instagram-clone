@@ -3,8 +3,136 @@ Colors to use:
 dark blue: #06365f
 light blue: #1c5380
 */
+:root {
+  --dark-blue: #06365f;
+  --light-blue: #1c5380;
+  --off-white: #f5f6f8;
+}
 
 body {
   font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
+  background-color: #f5f6f7;
+}
+
+.landing-page {
+  min-height: 100vh;
+  background-color: #f5f6f7;
+  background: linear-gradient(180deg, var(--light-blue) 35%, var(--off-white) 35%);
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+main {
+  margin: 0 auto;
+  /* padding: 4rem 8rem; larger screen padding */
+  padding: 2rem 2rem; 
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: center;
+}
+
+#phone-images {
+  display: none;
+}
+
+#log-in-button {
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: var(--light-blue);/*linear-gradient(var(--light-blue), var(--dark-blue));*/
+  border: 1px var(--dark-blue) solid;
+  border-radius: 2px;
+  box-shadow: 0px 0px 1px 1px var(--dark-blue);
+}
+
+#log-in-button img {
+  vertical-align: text-bottom;
+  margin-right: 8px;
+}
+
+#log-in-button img {
+  width: 1.2rem;
+}
+
+
+#promobox-text {
+  background-color: white;
+  padding: 0.25rem 2rem;
+  margin: 1rem 0;
+
+}
+
+#tagline {
+  color: var(--dark-blue);
+  margin: 0;
+}
+
+
+footer {
+  margin: auto auto 0 auto;
+}
+
+#footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 0.25rem;
+}
+
+#footer-nav a,
+#footer-nav span {
+  color: #06365f;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.75rem
+}
+
+span#copyright-info {
+  color: gray;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    flex-direction: row;
+  }
+  nav {
+    justify-content: space-between;
+  }
+  #promobox {
+    flex-basis: 56%;
+  }
+  #promobox-text {
+    background: linear-gradient(var(--off-white), #f5f6f8);
+    box-shadow: 0px -3px 4px 0px #1c5380;
+  }
+  #log-in-button {
+    width: 100px;
+  }
+  #app-store-logos {
+    display: inline;
+  }
+  #phone-images {
+    display: block;
+    flex-basis: 30%;
+    max-width: 80%;
+    max-height: 800px;
+  }
+  #text {
+    flex-basis: 60%;
+  }
 }
